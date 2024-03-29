@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { useRecoilValue } from "recoil";
-import { useQuiz } from "../../../../hooks/queries/useQuiz";
-import { quizConfigState } from "../../../../atoms/quiz";
+import { useQuiz } from "../../../../store/server/useQuiz";
 import { useSearchParams } from "react-router-dom";
+import { useQuizConfig } from "../../../../store/client/quizConfig";
 
 type Props = {
   isSolving: boolean;
@@ -11,7 +10,7 @@ type Props = {
 };
 
 const Questions = () => {
-  const { count, level } = useRecoilValue(quizConfigState);
+  const { count, level } = useQuizConfig();
   const { data: questionList } = useQuiz(count, level);
 
   const [searchParams] = useSearchParams();

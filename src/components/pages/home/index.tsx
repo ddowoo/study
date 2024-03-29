@@ -1,5 +1,4 @@
-import { useRecoilState } from "recoil";
-import { quizConfigState } from "../../../atoms/quiz";
+import { useQuizConfig } from "../../../store/client/quizConfig";
 import { BoxButton } from "../../atoms/buttons";
 import { useNavigate } from "react-router-dom";
 
@@ -8,13 +7,13 @@ const QUIZ_LEVEL_LIST: QuizLevel[] = ["easy", "medium", "hard"];
 
 const Home = () => {
   const navigate = useNavigate();
-  const [quizConfig, setQuizConfig] = useRecoilState(quizConfigState);
+  const quizConfig = useQuizConfig();
 
   const btnRoll = quizConfig.count !== null && quizConfig.level !== null ? "primary" : "disabled";
 
-  const handleQuizCount = (count: QuizCount) => setQuizConfig((prev) => ({ ...prev, count }));
+  const handleQuizCount = quizConfig.setCount;
 
-  const handleQuizLevel = (level: QuizLevel) => setQuizConfig((prev) => ({ ...prev, level }));
+  const handleQuizLevel = quizConfig.setLevel;
 
   const handleStateQuiz = () => navigate("/quiz?idx=0");
 
