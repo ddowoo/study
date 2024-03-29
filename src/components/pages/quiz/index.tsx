@@ -8,7 +8,7 @@ const Quiz = () => {
       <Suspense fallback={<p>퀴즈 기다리는 중....</p>}>
         <Questions />
       </Suspense>
-      <BoxButton text="퀴즈풀기" role="primary" />
+      <BoxButton text="제출하기" role="primary" />
     </article>
   );
 };

@@ -19,19 +19,6 @@ export const getQuestionListFetch = async (count: QuizCount, level: QuizLevel): 
     console.log("level : ", level);
     const res = await axios.get<OpenDbReturn>(`https://opentdb.com/api.php?amount=${count}&difficulty=${level}&type=multiple`);
 
-    // console.log("res : ", res);
-
-    // const ans = results.results.map((question) => {
-    //   const { correct_answer, incorrect_answers } = question;
-
-    //   return {
-    //     ...question,
-    //     optionList: shuffle([correct_answer, ...incorrect_answers]),
-    //   };
-    // });
-
-    // return ans;
-
     console.log("res : ", res);
 
     if (res.data.response_code === 0) {
