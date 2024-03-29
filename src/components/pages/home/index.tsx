@@ -47,7 +47,6 @@ const Home = () => {
         <p className="text-slate-500 text-xs">* 문제수와 난이도를 선택 후 퀴즈풀기 버튼을 누르면 퀴즈가 시작됩니다.</p>
         <p className="text-slate-500 text-xs">* 오답노트를 누르면 지금까지 틀린 문제를 모두 볼 수 있습니다.</p>
       </div>
-
       <BoxButton text="퀴즈풀기" role={btnRoll} disabled={btnRoll === "disabled"} onClick={handleStateQuiz} />
     </div>
   );
