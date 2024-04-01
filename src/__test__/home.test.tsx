@@ -53,7 +53,6 @@ describe("홈 컴포넌트 테스트", () => {
     const countRadioBtn = screen.getByLabelText("5개");
     const levelRadioBtn = screen.getByLabelText("medium");
     const quizBtn = screen.getByText("퀴즈풀기");
-    const quzBtn = screen.getByText("fw");
 
     fireEvent.click(countRadioBtn);
     fireEvent.click(levelRadioBtn);
