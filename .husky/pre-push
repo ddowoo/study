@@ -1,0 +1,8 @@
+# npm test
+# if [ $? -eq 0 ]; then
+#     echo "테스트 통과. Github push"
+#     exit 0
+# else
+#     echo "테스트 실패"
+#     exit 1
+# fi
